@@ -7,10 +7,13 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from './ui/input'
 import { Earth, MapPin, Search } from 'lucide-react'
 import { Button } from './ui/button'
+import { useRouter } from 'next/navigation'
 
 type Props = {}
 
 const SearchContainer = (props: Props) => {
+
+  const router = useRouter()
   const form = useForm<SearchBarSchemaType>({
     resolver:zodResolver(searchBarSchema)
   })
@@ -24,10 +27,19 @@ const SearchContainer = (props: Props) => {
     setFocus,
     formState:{isSubmitting}
   } = form
+
+  const onSubmit = (values:SearchBarSchemaType) => {
+    if(values){
+      if (!values.countryName){
+        router.push(`/explore?jobName=${values.jobName}`)
+      }
+      router.push(`/explore?jobName=${values.jobName}&countryName=${values.countryName}`)
+    }
+  }
   return (
     <div className=' w-[90%] rounded-full mx-auto min-h-[10vh] pl-6 bg-[#29293a] flex justify-center items-center'>
       <Form {...form}>
-        <form className='flex justify-center items-center w-full  gap-2 ' action="">
+        <form className='flex justify-center items-center w-full  gap-2 ' onSubmit={handleSubmit(onSubmit)}>
             <FormField
             control={control}
             name="jobName"
