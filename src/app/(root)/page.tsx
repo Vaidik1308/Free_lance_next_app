@@ -11,7 +11,7 @@ export default function Home() {
     <main>
       <div className="bg-[#1D1C26] py-4">
         <Hero/>
-        <div className="my-8">
+        <div className="my-8 w-[90%] mx-auto ">
           <SearchContainer/>
         </div>  
       </div>  

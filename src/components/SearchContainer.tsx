@@ -37,7 +37,7 @@ const SearchContainer = (props: Props) => {
     }
   }
   return (
-    <div className=' w-[90%] rounded-full mx-auto min-h-[10vh] pl-6 bg-[#29293a] flex justify-center items-center'>
+    <div className=' w-[100%] rounded-full mx-auto min-h-[10vh] pl-6 bg-[#29293a] flex justify-center items-center'>
       <Form {...form}>
         <form className='flex justify-center items-center w-full  gap-2 ' onSubmit={handleSubmit(onSubmit)}>
             <FormField
@@ -74,7 +74,7 @@ const SearchContainer = (props: Props) => {
                 </FormItem>
             )}
           />  
-          <Button className='bg-[#f88160]  m-1   h-12 w-36 rounded-full'>Search</Button>
+          <Button className='bg-[#f88160]  m-1   h-12 w-36 rounded-full mr-2'>Search</Button>
         </form>
       </Form>
     </div>
