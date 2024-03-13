@@ -1,4 +1,5 @@
 import SearchContainer from "@/components/SearchContainer"
+import CategoriesComp from "@/components/category/CategoriesComp"
 
 
 export default function ExploreLayout({
@@ -12,7 +13,7 @@ export default function ExploreLayout({
         <SearchContainer/>
       </div>
       <div className="w-[90%] mx-auto">
-        CATEGORY
+        <CategoriesComp/>
       </div>
       <div className="w-[90%] mx-auto">
         {children}

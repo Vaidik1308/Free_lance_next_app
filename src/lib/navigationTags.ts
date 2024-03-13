@@ -9,7 +9,7 @@ export const navigationTags = [
     },
     {
         label:"Post a Job",
-        path:"/Post-a-job"
+        path:"/post-a-job"
     },
     {
         label:"About",
