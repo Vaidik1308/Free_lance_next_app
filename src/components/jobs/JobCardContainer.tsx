@@ -5,7 +5,7 @@ type Props = {}
 
 const JobCardContainer = (props: Props) => {
   return (
-    <div className='w-full my-4 gap-3 flex flex-col'>
+    <div className='w-full py-4 gap-3 flex flex-col'>
         <SingleCard/>
         <SingleCard/>
         <SingleCard/>

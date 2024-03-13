@@ -9,7 +9,7 @@ type Props = {}
 
 const SingleCard = (props: Props) => {
   return (
-    <div className='w-full min-h-[40vh] flex border-t-[1px]  last:border-b-[1px] py-8 border-gray-700  ' >
+    <div className='w-full min-h-[40vh] flex border-t-[1px]   py-8 border-gray-700  ' >
         <div className='flex-[2] flex flex-col  justify-between'>
             <div className='flex gap-5 items-center '>
                 <div className='bg-[#2a2b38] size-12 flex justify-center items-center rounded-lg'>
