@@ -4,6 +4,7 @@ import { ShipWheel } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import LoginSignUp from './LoginSignUp'
 
 type Props = {}
 
@@ -26,10 +27,7 @@ const Navbar = (props: Props) => {
                     <Link className={pathname === item.path ? "text-white": "text-gray-500"} key={item.label} href={item.path}>{item.label}</Link>
                 ))}
             </div>
-            <div className='flex gap-8 items-center'>
-                <Link href={"/login"}>Log in</Link>
-                <Link href={"/sign-up"}>Sign Up</Link>
-            </div>
+            <LoginSignUp/>
         </div>
     </nav>
   )
