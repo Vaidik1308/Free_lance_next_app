@@ -27,7 +27,7 @@ const Navbar = (props: Props) => {
                 ))}
             </div>
             <div className='flex gap-8 items-center'>
-                <Link href={"/log-in"}>Log in</Link>
+                <Link href={"/login"}>Log in</Link>
                 <Link href={"/sign-up"}>Sign Up</Link>
             </div>
         </div>
