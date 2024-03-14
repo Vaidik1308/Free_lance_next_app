@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 import LoginSignUp from './LoginSignUp'
+import ProfileView from './ProfileView'
 
 type Props = {}
 
@@ -27,6 +28,7 @@ const Navbar = (props: Props) => {
                     <Link className={pathname === item.path ? "text-white": "text-gray-500"} key={item.label} href={item.path}>{item.label}</Link>
                 ))}
             </div>
+            <ProfileView/>
             <LoginSignUp/>
         </div>
     </nav>
