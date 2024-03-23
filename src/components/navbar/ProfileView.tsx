@@ -5,12 +5,9 @@ import { auth } from '../../../auth'
 type Props = {}
 
 const ProfileView = async (props: Props) => {
-    const session = await auth()
-    const profileImg = session?.user?.image as string
-    const username = session?.user?.name as string
-    if(!session){
-        return
-    }
+  const session = await auth();
+  const profileImg =  session?.user?.image as string
+  const username =  session?.user?.name as string
   return (
     <div className='w-fit flex items-center justify-center gap-4'>
         <p>{username}</p>

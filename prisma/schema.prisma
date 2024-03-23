@@ -44,10 +44,11 @@ model User {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
   email         String?   @unique
-  emailVerified DateTime?
   image         String?
+  hashedPassword  String?
   accounts      Account[]
   sessions      Session[]
+  // profile    Profile[]
 }
 
 model VerificationToken {
@@ -57,5 +58,38 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+// model Job{
+//   id  String  @id @default(auto()) @map("_id") @db.ObjectId
+//   jobName String
+//   jobLogo String?
+//   description String
+//   priceRange String
+// }
+
+// model Profile{
+//   id  String  @id @default(auto()) @map("_id") @db.ObjectId
+//   auhtorEmail String
+//   user  User  @relation(fields: [auhtorEmail], references: [email] ,onDelete: Cascade)
+//   username String?
+//   profileImage String?
+//   bio String?
+//   location String?
+//   gender String?
+//   dob DateTime?
+//   phone String? 
+//   skillIds String[]
+// }
+
+// model Skill {
+//   id  String  @id @default(auto()) @map("_id") @db.ObjectId
+//   label String
+// }
+
+model Category{
+  id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  label String
+  catSlug String
 }
 

@@ -1,16 +1,19 @@
+import { getAllCategories } from '@/lib/data'
 import SingleCategory from './SingleCategory'
+import { Category } from '../../../types'
+
 
 type Props = {}
 
-const CategoriesComp = (props: Props) => {
+const CategoriesComp = async (props: Props) => {
+  const categories:Category[] = await getAllCategories()
   return (
     <div className='my-8 flex flex-wrap gap-8'>
-      <SingleCategory category="View All"/>
-      <SingleCategory category="Design"/>
-      <SingleCategory category="Development"/>
-      <SingleCategory category="Marketing"/>
-      <SingleCategory category="Customer Service"/>
-      <SingleCategory category="Finance"/>
+      {categories && (
+        categories.map((category) => (
+          <SingleCategory label={category.label} catSlug={category.catSlug} id={category.id} key={category.id}/>
+        ))
+      )}
     </div>
   )
 }

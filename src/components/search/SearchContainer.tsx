@@ -1,21 +1,34 @@
 'use client'
 import { SearchBarSchemaType, searchBarSchema } from '@/lib/validations'
 import { zodResolver } from '@hookform/resolvers/zod'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
-import { Input } from './ui/input'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
+import { Input } from '../ui/input'
 import { Earth, MapPin, Search } from 'lucide-react'
-import { Button } from './ui/button'
-import { useRouter } from 'next/navigation'
+import { Button } from '../ui/button'
+import { useRouter, useSearchParams } from 'next/navigation'
 
-type Props = {}
+type Props = {
+  jobName:string,
+  countryName:string,
+  setJobName:(value:string)  => void;
+  setCountryName: (value:string) => void
+}
 
-const SearchContainer = (props: Props) => {
+const SearchContainer = ({jobName,countryName,setJobName,setCountryName}: Props) => {
+  const params = useSearchParams()
+  
+  useEffect(() => {
 
+  })
   const router = useRouter()
   const form = useForm<SearchBarSchemaType>({
-    resolver:zodResolver(searchBarSchema)
+    resolver:zodResolver(searchBarSchema),
+    defaultValues:{
+      jobName:params.get("jobName") as string,
+      countryName:params.get("countryName") as string
+    }
   })
 
   const {
@@ -25,15 +38,13 @@ const SearchContainer = (props: Props) => {
     control,
     setValue,
     setFocus,
-    formState:{isSubmitting}
+    formState:{isSubmitting,}
   } = form
 
   const onSubmit = (values:SearchBarSchemaType) => {
     if(values){
-      if (!values.countryName){
-        router.push(`/explore?jobName=${values.jobName}`)
-      }
       router.push(`/explore?jobName=${values.jobName}&countryName=${values.countryName}`)
+      
     }
   }
   return (
@@ -51,6 +62,7 @@ const SearchContainer = (props: Props) => {
                             icon={<Search color='white'/>}
                             placeholder="e.g Frontend Developer"
                             {...field}
+                            value={ params.get("jobName") || ""}
                         />
                     </FormControl>
                     <FormMessage/>
@@ -68,6 +80,7 @@ const SearchContainer = (props: Props) => {
                             className='border-none text-white focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-ring'
                             placeholder="e.g India"
                             {...field}
+                            value={params.get("countryName") || ""}
                         />
                     </FormControl>
                     <FormMessage/>

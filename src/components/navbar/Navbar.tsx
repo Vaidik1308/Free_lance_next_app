@@ -1,5 +1,5 @@
 'use client'
-import { navigationTags } from '@/lib/navigationTags'
+import { navigationTags } from '@/lib/data/navigationTags'
 import { ShipWheel } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

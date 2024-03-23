@@ -79,7 +79,7 @@ const LoginForm = (props: Props) => {
             <SocialAuth/>
         </div>
         <div className='w-full justify-end'>
-            <Link href={"/sign-up"} className='text-left w-fit text-blue-500'>Don't have an account. Create one</Link>
+            <Link href={"/sign-up"} className='text-left w-fit text-blue-500'>Do not have an account. Create one</Link>
         </div>
     </div>
   )
