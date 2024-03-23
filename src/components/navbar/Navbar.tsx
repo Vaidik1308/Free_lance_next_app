@@ -1,17 +1,16 @@
 'use client'
-import { navigationTags } from '@/lib/data/navigationTags'
+import { navigationTags } from '@/lib/navigationTags'
 import { ShipWheel } from 'lucide-react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import React from 'react'
 import LoginSignUp from './LoginSignUp'
 import ProfileView from './ProfileView'
+import MainLinks from './MainLinks'
 
 type Props = {}
 
 const Navbar = (props: Props) => {
 
-    const pathname = usePathname()
+    
   return (
     <nav className='bg-[#1D1C26] h-[14vh] w-full text-white flex justify-between items-center px-6 py-2'>
         <Link href={"/"} className='flex w-[1/4] items-center gap-1.5'>
@@ -23,11 +22,7 @@ const Navbar = (props: Props) => {
             </h2>
         </Link>
         <div className='flex justify-between w-[60%] '>
-            <div className='flex gap-8 items-center'>
-                {navigationTags.map((item) => (
-                    <Link className={pathname === item.path ? "text-white": "text-gray-500"} key={item.label} href={item.path}>{item.label}</Link>
-                ))}
-            </div>
+            <MainLinks/>
             <ProfileView/>
             <LoginSignUp/>
         </div>

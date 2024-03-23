@@ -1,6 +1,6 @@
 
 import { redirect } from "next/navigation";
-import { auth } from "../../../auth";
+import { auth } from "../../auth";
 import "../globals.css";
 
 export default async function AuthLayout({
