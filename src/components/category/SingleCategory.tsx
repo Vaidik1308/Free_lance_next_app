@@ -11,23 +11,21 @@ const SingleCategory = ({label,catSlug,id}: Category) => {
   const router = useRouter()
   const pathname = usePathname()
   const param = new URLSearchParams(searchParams)
-  console.log(pathname);
+  // console.log(pathname + param);
   
-  const handlePush = (label:string) =>{
-    console.log(label);
+  const handlePush = (catSlug:string) =>{
     param.set("category",catSlug)
-    console.log(param);
-    router.push(`/explore?categories=${label}`)
+    router.push(pathname+ '?' + param)
   }
   
   
   
   return (
-    <button onClick={() =>{
+    <Button onClick={() =>{
       handlePush(catSlug)
     }} className='bg-[#242431] w-fit px-6 py-2 text-[15px] rounded-lg font-semibold '>
       {label}
-    </button>
+    </Button>
   )
 }
 

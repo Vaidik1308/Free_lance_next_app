@@ -14,7 +14,7 @@ const Search = (props: Props) => {
     useEffect(() => {
         const jobName = searchParams.get("jobName")
         const countryName = searchParams.get("countryName")
-            console.log(jobName);
+            // console.log(jobName);
             
         if(jobName) setJobName(jobName)
         if(countryName) setCountryName(countryName)

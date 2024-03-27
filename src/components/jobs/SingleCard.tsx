@@ -1,5 +1,6 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import twitter from '../../../public/logos/twitter.svg'
 import { ArrowRight, HandCoins } from 'lucide-react'
 import { Button } from '../ui/button'
@@ -8,9 +9,10 @@ import Link from 'next/link'
 type Props = {}
 
 const SingleCard = (props: Props) => {
+
   return (
     <div className='w-full min-h-[40vh] flex border-t-[1px]   py-8 border-gray-700  ' >
-        <div className='flex-[2] flex flex-col  justify-between'>
+        <div className='flex-[4] flex flex-col  justify-between'>
             <div className='flex gap-5 items-center '>
                 <div className='bg-[#2a2b38] size-12 flex justify-center items-center rounded-lg'>
                     <Image
@@ -50,11 +52,12 @@ const SingleCard = (props: Props) => {
                 </div>
             </div>
         </div>
-        <div className='flex-1 flex justify-end px-2 '>
-            <Button asChild className='bg-[#F98161]  px-4 h-[8vh] rounded-full flex justify-center gap-3 items-center w-[35%]'>
-                <Link href={`/explore/2`}>
-                    <ArrowRight/>
-                    <span>Apply Now</span>
+        <div  className='flex-1 flex justify-center pt-4 px-2  '>
+            <Button variant={"default"} asChild className='bg-[#F98161]  px-4 h-[8vh] rounded-full flex justify-center gap-3 items-center w-[65%] overflow-hidden  group'>
+                <Link href={`/explore/2`} className='flex justify-center gap-2 relative'>
+                    {/* <div className='group-hover:w-10 group-hover:flex  group-hover:h-[2px] group-hover:left-20 group-hover:bg-white hidden duration-300 absolute'/> */}
+                    <ArrowRight className=' group-hover:translate-x-20 duration-300 '/>
+                    <span className=' group-hover:translate-x-5 group-hover:opacity-0 duration-300' >Apply Now</span>
                 </Link>
             </Button>
         </div>

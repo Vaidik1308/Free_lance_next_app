@@ -1,5 +1,6 @@
 'use client'
-import { navigationTags } from '@/lib/navigationTags'
+
+import { navigationTags } from '@/lib/data/navigationTags'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'

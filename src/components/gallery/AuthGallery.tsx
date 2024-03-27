@@ -50,13 +50,13 @@ const AuthGallery = (props: Props) => {
                 <Image src={bgPic} alt='' fill className='object-cover hover:scale-[1.09]  duration-500' />
             </div>
             <div className='pic2 w-full row-span-2 relative h-full overflow-hidden'>
-            <Image src={pic2} alt='' fill className='object-cover hover:scale-[1.09]  duration-500' />
+                <Image src={pic2} alt='' fill className='object-cover hover:scale-[1.09]  duration-500' />
             </div>
             <div className='pic3 w-full min-h-[220px] h-full relative overflow-hidden'>
-            <Image src={pic3} alt='' fill className='object-cover hover:scale-[1.09]  duration-500' />
+                <Image src={pic3} alt='' fill className='object-cover hover:scale-[1.09]  duration-500' />
             </div>
             <div className='pic4 w-full col-span-2 h-full relative overflow-hidden'>
-            <Image src={pic4} alt='' fill className='object-cover hover:scale-[1.09]  duration-500' />
+                <Image src={pic4} alt='' fill className='object-cover hover:scale-[1.09]  duration-500' />
             </div>
         </div>
   )

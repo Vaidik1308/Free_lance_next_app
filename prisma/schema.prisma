@@ -60,13 +60,15 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-// model Job{
-//   id  String  @id @default(auto()) @map("_id") @db.ObjectId
-//   jobName String
-//   jobLogo String?
-//   description String
-//   priceRange String
-// }
+model Job{
+  id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  jobName String
+  jobLogo String?
+  description String
+  priceRange String
+  domain String 
+  jobType String[]
+}
 
 // model Profile{
 //   id  String  @id @default(auto()) @map("_id") @db.ObjectId

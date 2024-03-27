@@ -1,10 +1,10 @@
-'use client'
-import { navigationTags } from '@/lib/navigationTags'
+
 import { ShipWheel } from 'lucide-react'
 import React from 'react'
 import LoginSignUp from './LoginSignUp'
 import ProfileView from './ProfileView'
 import MainLinks from './MainLinks'
+import Link from 'next/link'
 
 type Props = {}
 

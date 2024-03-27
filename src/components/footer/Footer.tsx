@@ -26,9 +26,9 @@ const Footer = (props: Props) => {
                         Get to know our hiring process before you apply or find answers to any lingering questions, right here, right now
                     </p>
                     <Button asChild className='bg-[#F98161]  px-4 h-[8vh] rounded-full flex justify-center gap-3 items-center w-[35%]'>
-                        <Link href={`/explore/2`}>
-                            <span>Learn more</span>
-                            <MoveUpRight />
+                        <Link className='group' href={`/explore/2`}>
+                            <span className='group-hover:text-xl duration-300'>Learn more</span>
+                            <MoveUpRight className='group-hover:rotate-45 duration-300 group-hover:text-xl' />
                         </Link>
                     </Button>
                 </div>
