@@ -10,7 +10,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-      <main className={"w-full min-h-screen "}>
+      <main className={"w-full min-h-screen  bg-[#1C1C25]"}>
         <div>
           <Navbar/>
         </div>

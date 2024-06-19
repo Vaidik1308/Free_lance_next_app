@@ -3,3 +3,4 @@ export type Category = {
     label:string;
     catSlug:string;
 }
+

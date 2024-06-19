@@ -7,7 +7,7 @@ const SingleJob = (props: Props) => {
   return (
     <div className='border border-gray-300 rounded-[18px] py-6'>
         <div className='flex flex-col w-[80%] mx-auto justify-between min-h-[25vh]'>
-            <div className='flex items-center justify-center gap-12 '>
+            <div className='flex items-center justify-center gap-4 '>
                 <div className='size-[72px] rounded-lg flex justify-center items-center bg-gray-200 p-1'>
                     <Image
                         src={microsoftIcon}

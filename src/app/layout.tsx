@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className,"w-full min-h-screen ")}>
         {children}
+        {/* <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt explicabo accusantium quae, adipisci aut blanditiis eligendi ipsam optio asperiores sed, quis nulla amet voluptates ratione quos culpa vel laboriosam impedit.</p> */}
       </body>
     </html>
   );
